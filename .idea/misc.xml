@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/default_pager_dot.xml" value="0.2365" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_bluevalley.xml" value="0.2365" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_product_categories.xml" value="0.2265" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_reliable_shopping.xml" value="0.2265" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_user_friendly_ui.xml" value="0.2265" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/item_selector_dot_background.xml" value="0.2365" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/selected_pager_dot.xml" value="0.2365" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_onboarding.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_onboarding_three.xml" value="0.24895833333333334" />
