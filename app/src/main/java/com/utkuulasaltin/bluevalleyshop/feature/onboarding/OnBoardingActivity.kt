@@ -15,6 +15,8 @@ import com.utkuulasaltin.bluevalleyshop.R
 import com.utkuulasaltin.bluevalleyshop.databinding.ActivityOnboardingBinding
 import com.utkuulasaltin.bluevalleyshop.databinding.FragmentOnBoardingBinding
 import com.utkuulasaltin.bluevalleyshop.feature.onboarding.adapter.OnBoardingAdapter
+import com.utkuulasaltin.bluevalleyshop.utils.extensions.gone
+import com.utkuulasaltin.bluevalleyshop.utils.extensions.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,25 +30,29 @@ class OnBoardingActivity : AppCompatActivity() {
         binding.isLastPage = false
         binding.viewPager.adapter = OnBoardingAdapter(this, prepareOnBoardingItems())
 
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position -> }.attach()
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+        }.attach()
 
+        initViews()
+    }
+
+    private fun initViews() {
         binding.viewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 binding.isLastPage = position == 2
 
                 if (position != 0) {
-                    binding.btnPrev.visibility = View.VISIBLE
+                    binding.btnPrev.visible()
                 } else {
-                    binding.btnPrev.visibility = View.GONE
+                    binding.btnPrev.gone()
                 }
             }
         })
 
         binding.btnSkip.setOnClickListener {
             if (binding.viewPager.currentItem == 2) {
-                viewModel.setOnBoardingStatus()
-                navigateToMain()
+                skipOnBoarding()
             } else {
                 // next onboarding page
                 binding.viewPager.setCurrentItem(binding.viewPager.currentItem.plus(1), true)
@@ -56,6 +62,11 @@ class OnBoardingActivity : AppCompatActivity() {
         binding.btnPrev.setOnClickListener {
             binding.viewPager.setCurrentItem(binding.viewPager.currentItem.minus(1), true)
         }
+    }
+
+    private fun skipOnBoarding() {
+        viewModel.setOnBoardingStatus()
+        navigateToMain()
     }
 
     private fun prepareOnBoardingItems(): List<Int> {

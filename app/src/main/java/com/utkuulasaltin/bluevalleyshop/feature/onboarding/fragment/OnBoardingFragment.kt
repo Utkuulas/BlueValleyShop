@@ -5,14 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.utkuulasaltin.bluevalleyshop.R
 
 class OnBoardingFragment : Fragment() {
-    private var position: Int = 0
+    private var layout: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            position = it.getInt("position")
+            layout = it.getInt("position")
         }
     }
 
@@ -20,15 +19,15 @@ class OnBoardingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(position, container, false)
+        return inflater.inflate(layout, container, false)
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(position: Int) =
+        fun newInstance(layout: Int) =
             OnBoardingFragment().apply {
                 arguments = Bundle().apply {
-                    putInt("position", position)
+                    putInt("layout", layout)
                 }
             }
     }
