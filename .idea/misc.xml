@@ -3,19 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_bluevalley.xml" value="0.2265" />
-        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
-        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/activity_splash.xml" value="0.25" />
-        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
-        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2265" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_product_categories.xml" value="0.2265" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_reliable_shopping.xml" value="0.2265" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_user_friendly_ui.xml" value="0.2265" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_onboarding.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_onboarding_three.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_onboarding_two.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
 </project>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.utkuulasaltin.bluevalleyshop.MainActivity
 import com.utkuulasaltin.bluevalleyshop.R
+import com.utkuulasaltin.bluevalleyshop.feature.onboarding.OnBoardingActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -21,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
         lifecycleScope.launch {
             delay(3500)
 
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashActivity, OnBoardingActivity::class.java)
             startActivity(intent)
             finish()
         }
