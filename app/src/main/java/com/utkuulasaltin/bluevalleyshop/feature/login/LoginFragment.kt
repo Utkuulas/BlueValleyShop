@@ -1,32 +1,56 @@
 package com.utkuulasaltin.bluevalleyshop.feature.login
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.utkuulasaltin.bluevalleyshop.R
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.utkuulasaltin.bluevalleyshop.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
-
-    private lateinit var viewModel: LoginViewModel
-
+    private val viewModel by viewModels<LoginViewModel>()
+    private lateinit var binding: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        lifecycleScope.launchWhenResumed {
+            launch {
+                viewModel.uiEvent.collect {
+                    when (it) {
+                        is LoginViewEvent.NavigateToMain -> {
+                            Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+
+                        is LoginViewEvent.ShowError -> {
+                            Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                    }
+                }
+            }
+        }
+
+        binding.btnLogin.setOnClickListener {
+            viewModel.login(
+                binding.etMailLogin.text.trim().toString(),
+                binding.etPasswordLogin.text.trim().toString()
+            )
+        }
     }
 
 }
