@@ -1,6 +1,7 @@
 package com.utkuulasaltin.bluevalleyshop.data.di
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.utkuulasaltin.bluevalleyshop.data.interceptor.AuthInterceptor
 import com.utkuulasaltin.bluevalleyshop.data.remote.utils.Constants
 import dagger.Module
@@ -58,4 +59,8 @@ class RemoteDataModule {
     @Provides
     @Singleton
     fun provideFirebaseService() = FirebaseAuth.getInstance()
+
+    @Provides
+    @Singleton
+    fun provideFirebaseFireStore() = FirebaseFirestore.getInstance()
 }
