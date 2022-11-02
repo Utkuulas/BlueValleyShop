@@ -29,11 +29,11 @@
                 android:text="Login"/>
 
         <EditText
-                android:id="@+id/et_mail_login"
+                android:id="@+id/et_user_name_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Mail"
+                android:hint="User Name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title_login"/>
 
         <EditText
@@ -43,7 +43,7 @@
                 android:layout_marginTop="10dp"
                 android:inputType="textPassword"
                 android:hint="Password"
-                app:layout_constraintTop_toBottomOf="@+id/et_mail_login"/>
+                app:layout_constraintTop_toBottomOf="@+id/et_user_name_login"/>
 
         <Button
                 android:id="@+id/btnLogin"

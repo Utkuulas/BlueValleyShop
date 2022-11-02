@@ -24,11 +24,11 @@ class LoginViewModel @Inject constructor(
     private val _uiEvent = MutableSharedFlow<LoginViewEvent>(replay = 0)
     val uiEvent: SharedFlow<LoginViewEvent> = _uiEvent
 
-    fun login(email: String, password: String) {
+    fun login(userName: String, password: String) {
         viewModelScope.launch {
-            if (isValidFields(email, password)) {
+            if (isValidFields(userName, password)) {
                 firebaseAuth.signInWithEmailAndPassword(
-                    "${email}@bluevalley.com",
+                    "${userName}@bluevalley.com",
                     password
                 ).addOnCompleteListener { task ->
                     if(task.isSuccessful) {
@@ -48,8 +48,8 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun isValidFields(email: String, password: String): Boolean {
-        return email.isNotEmpty() && password.isNotEmpty()
+    private fun isValidFields(userName: String, password: String): Boolean {
+        return userName.isNotEmpty() && password.isNotEmpty()
     }
 }
 
