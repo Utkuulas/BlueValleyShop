@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "57883303904",
+    "project_id": "blue-valley-store-3f4d4",
+    "storage_bucket": "blue-valley-store-3f4d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57883303904:android:a111af4bb492828c00d585",
+        "android_client_info": {
+          "package_name": "com.utkuulasaltin.bluevalleyshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57883303904-jck2tp6it5c2k2o04ng6963ittrutvdt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.utkuulasaltin.bluevalleyshop",
+            "certificate_hash": "505aa569772dc8f568fde0711f6198e018f3c81d"
+          }
+        },
+        {
+          "client_id": "57883303904-d6a4ntae8sv36v7d4tntig5rjg1ldhd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7Im3spZy5kb9IXqAwutFylOVB2D8h9Ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57883303904-d6a4ntae8sv36v7d4tntig5rjg1ldhd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
