@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.utkuulasaltin.bluevalleyshop.MainActivity
+import com.utkuulasaltin.bluevalleyshop.feature.main.MainActivity
 import com.utkuulasaltin.bluevalleyshop.R
 import com.utkuulasaltin.bluevalleyshop.feature.onboarding.OnBoardingActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,22 +18,17 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        navigateToMain()
 
         lifecycleScope.launchWhenResumed {
             launch {
                 viewModel.uiEvent.collect {
-                    when(it) {
+                    when (it) {
                         is SplashViewEvent.NavigateToOnBoarding -> {
                             navigateToOnBoarding()
                         }
 
                         is SplashViewEvent.NavigateToMain -> {
-                            navigateToMain()
-                        }
-
-                        is SplashViewEvent.NavigateToLogin -> {
-
+                            navigateToMain(it.isNavigateHome)
                         }
                     }
                 }
@@ -41,12 +36,13 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigateToMain() {
+    private fun navigateToMain(isNavigateHome: Boolean) {
 
         lifecycleScope.launch {
             delay(3500)
 
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            intent.putExtra(MainActivity.KEY_NAVIGATE_HOME, isNavigateHome)
             startActivity(intent)
             finish()
         }
