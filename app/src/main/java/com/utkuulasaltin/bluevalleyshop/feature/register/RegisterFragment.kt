@@ -10,7 +10,10 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.utkuulasaltin.bluevalleyshop.R
 import com.utkuulasaltin.bluevalleyshop.databinding.FragmentRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -31,15 +34,21 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        navController = findNavController()
         lifecycleScope.launchWhenResumed {
             launch {
                 viewModel.uiEvent.collect {
                     when (it) {
                         is RegisterViewEvent.NavigateToMain -> {
+                            navController?.navigate(
+                                resId = R.id.action_registerFragment_to_homeFragment,
+                                null,
+                                navOptions = NavOptions.Builder().setPopUpTo(0, true).build()
+                            )
                             Snackbar.make(requireView(), "Register Success", Snackbar.LENGTH_SHORT)
                                 .show()
                         }
+
                         is RegisterViewEvent.ShowError -> {
                             Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT)
                                 .show()

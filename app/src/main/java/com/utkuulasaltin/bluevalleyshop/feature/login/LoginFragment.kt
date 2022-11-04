@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.utkuulasaltin.bluevalleyshop.R
 import com.utkuulasaltin.bluevalleyshop.databinding.FragmentLoginBinding
@@ -38,6 +39,11 @@ class LoginFragment : Fragment() {
                 viewModel.uiEvent.collect {
                     when (it) {
                         is LoginViewEvent.NavigateToMain -> {
+                            navController?.navigate(
+                                R.id.action_loginFragment_to_homeFragment,
+                                null,
+                                NavOptions.Builder().setPopUpTo(0, true).build()
+                            )
                             Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT)
                                 .show()
                         }
