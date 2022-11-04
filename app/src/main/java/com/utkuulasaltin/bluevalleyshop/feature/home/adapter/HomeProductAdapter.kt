@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.utkuulasaltin.bluevalleyshop.R
 import com.utkuulasaltin.bluevalleyshop.data.model.ProductResponseItem
 import com.utkuulasaltin.bluevalleyshop.databinding.ItemProductLayoutBinding
+import com.utkuulasaltin.bluevalleyshop.utils.BindingAdapter
 
 class HomeProductAdapter(private val listener: OnProductClickListener) :
     ListAdapter<ProductResponseItem, HomeProductAdapter.ProductViewHolder>(ProductDiffUtil()) {
@@ -30,7 +31,6 @@ class HomeProductAdapter(private val listener: OnProductClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: ProductResponseItem, listener: OnProductClickListener) {
             binding.dataHolder = data
-            binding.ivProductImage
         }
     }
 
