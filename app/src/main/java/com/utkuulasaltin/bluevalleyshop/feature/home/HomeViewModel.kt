@@ -1,7 +1,55 @@
 package com.utkuulasaltin.bluevalleyshop.feature.home
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.utkuulasaltin.bluevalleyshop.data.model.ProductResponse
+import com.utkuulasaltin.bluevalleyshop.data.model.ProductResponseItem
+import com.utkuulasaltin.bluevalleyshop.data.remote.utils.DataState
+import com.utkuulasaltin.bluevalleyshop.domain.repository.ProductsRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+@HiltViewModel
+class HomeViewModel @Inject constructor(private val productsRepository: ProductsRepository) :
+    ViewModel() {
+    private val _uiState = MutableStateFlow<HomeViewState>(HomeViewState.Success(mutableListOf()))
+    val uiState: StateFlow<HomeViewState> = _uiState
+
+
+    private val _uiEvent = MutableSharedFlow<HomeViewEvent>(replay = 0)
+    val uiEvent: SharedFlow<HomeViewEvent> = _uiEvent
+
+    init {
+        getProducts()
+    }
+
+    private fun getProducts() {
+        viewModelScope.launch {
+            productsRepository.getProducts().collect() {
+                when (it) {
+                    is DataState.Success -> {
+                        _uiState.value = HomeViewState.Success(it.data.toMutableList())
+                    }
+                    is DataState.Error -> {
+                        _uiEvent.emit(HomeViewEvent.ShowError(it.error?.status_message))
+                    }
+                    is DataState.Loading -> {
+                        _uiState.value = HomeViewState.Loading
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+sealed class HomeViewEvent {
+    data class ShowError(val message: String?) : HomeViewEvent()
+}
+
+sealed class HomeViewState {
+    class Success(val products: MutableList<ProductResponseItem>) : HomeViewState()
+    object Loading: HomeViewState()
 }
