@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
 import com.google.android.material.snackbar.Snackbar
 import com.utkuulasaltin.bluevalleyshop.R
 import com.utkuulasaltin.bluevalleyshop.databinding.FragmentHomeBinding
@@ -21,6 +22,7 @@ import kotlinx.coroutines.launch
 class HomeFragment : Fragment(), OnProductClickListener {
     private val viewModel by viewModels<HomeViewModel>()
     private lateinit var binding: FragmentHomeBinding
+    private var navController: NavController? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -65,7 +67,7 @@ class HomeFragment : Fragment(), OnProductClickListener {
             }
         }
     }
-    override fun onProductClick(id: String) {
-        TODO("Not yet implemented")
+    override fun onProductClick(id: Int?) {
+        viewModel.onProductDetail(id)
     }
 }

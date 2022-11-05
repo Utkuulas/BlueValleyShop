@@ -3,7 +3,7 @@
     
     <data>
         <variable name="dataHolder"
-                  type="com.utkuulasaltin.bluevalleyshop.data.model.ProductResponseItem"/>
+                  type="com.utkuulasaltin.bluevalleyshop.data.model.ProductDTO"/>
 
         <variable name="listener"
                   type="com.utkuulasaltin.bluevalleyshop.feature.home.adapter.OnProductClickListener"/>
@@ -23,6 +23,7 @@
                 app:cardCornerRadius="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                    android:onClick="@{() -> listener.onProductClick(dataHolder.id)}"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/default_pager_dot.xml" value="0.2365" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.2165" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_bluevalley.xml" value="0.2365" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_product_categories.xml" value="0.2265" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/drawable/ic_reliable_shopping.xml" value="0.2265" />
@@ -16,12 +17,13 @@
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/fragment_on_boarding.xml" value="0.25" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/fragment_product_detail.xml" value="0.25" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/fragment_register.xml" value="0.25" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/fragment_search.xml" value="0.2359375" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_onboarding.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_onboarding_three.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_onboarding_two.xml" value="0.24895833333333334" />
-        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_product_layout.xml" value="0.536" />
+        <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/layout/item_product_layout.xml" value="0.25" />
         <entry key="..\:/Users/utkuu/IntelliJIDEAProjects/BlueValleyShop/app/src/main/res/menu/bottom_menu.xml" value="0.26458333333333334" />
       </map>
     </option>

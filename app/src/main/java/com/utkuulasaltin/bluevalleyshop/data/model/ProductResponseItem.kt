@@ -19,3 +19,10 @@ data class ProductResponseItem(
     @SerializedName("title")
     val title: String?
 )
+
+data class ProductDTO(
+    val id: Int?,
+    val title: String?,
+    val image: String?,
+    val price: Double?
+)

@@ -13,6 +13,8 @@
                 app:destination="@id/searchFragment"/>
         <action android:id="@+id/action_homeFragment_to_login_graph"
                 app:destination="@id/login_graph"/>
+        <action android:id="@+id/action_homeFragment_to_productDetailFragment"
+                app:destination="@id/productDetailFragment"/>
     </fragment>
 
     <fragment
@@ -22,5 +24,8 @@
             tools:layout="@layout/fragment_search"/>
 
     <include app:graph="@navigation/login_graph"/>
+    <fragment android:id="@+id/productDetailFragment"
+              android:name="com.utkuulasaltin.bluevalleyshop.feature.productdetail.ProductDetailFragment"
+              android:label="ProductDetailFragment"/>
 
 </navigation>

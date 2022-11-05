@@ -6,12 +6,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.utkuulasaltin.bluevalleyshop.R
+import com.utkuulasaltin.bluevalleyshop.data.model.ProductDTO
 import com.utkuulasaltin.bluevalleyshop.data.model.ProductResponseItem
 import com.utkuulasaltin.bluevalleyshop.databinding.ItemProductLayoutBinding
 import com.utkuulasaltin.bluevalleyshop.utils.BindingAdapter
 
 class HomeProductAdapter(private val listener: OnProductClickListener) :
-    ListAdapter<ProductResponseItem, HomeProductAdapter.ProductViewHolder>(ProductDiffUtil()) {
+    ListAdapter<ProductDTO, HomeProductAdapter.ProductViewHolder>(ProductDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ProductViewHolder {
         return ProductViewHolder(
@@ -29,7 +30,7 @@ class HomeProductAdapter(private val listener: OnProductClickListener) :
 
     class ProductViewHolder(private val binding: ItemProductLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: ProductResponseItem, listener: OnProductClickListener) {
+        fun bind(data: ProductDTO, listener: OnProductClickListener) {
             binding.dataHolder = data
         }
     }
@@ -37,16 +38,16 @@ class HomeProductAdapter(private val listener: OnProductClickListener) :
 
 }
 
-class ProductDiffUtil : DiffUtil.ItemCallback<ProductResponseItem>() {
-    override fun areItemsTheSame(oldItem: ProductResponseItem, newItem: ProductResponseItem): Boolean {
+class ProductDiffUtil : DiffUtil.ItemCallback<ProductDTO>() {
+    override fun areItemsTheSame(oldItem: ProductDTO, newItem: ProductDTO): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: ProductResponseItem, newItem: ProductResponseItem): Boolean {
+    override fun areContentsTheSame(oldItem: ProductDTO, newItem: ProductDTO): Boolean {
         return oldItem == newItem
     }
 }
 
 interface OnProductClickListener {
-    fun onProductClick(id: String)
+    fun onProductClick(id: Int?)
 }
