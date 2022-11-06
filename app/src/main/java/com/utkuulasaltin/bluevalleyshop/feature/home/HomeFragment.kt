@@ -76,17 +76,12 @@ class HomeFragment : Fragment(), OnProductClickListener {
             }
         }
     }
+
     override fun onProductClick(id: Int?) {
-        lifecycleScope.launch {
-            withContext(Dispatchers.Main) {
+        lifecycleScope.launchWhenResumed {
+            launch {
                 findNavController().navigate(R.id.action_homeFragment_to_productDetailFragment)
             }
         }
-
-
-    }
-
-    private fun navigateToProductDetail() {
-
     }
 }
