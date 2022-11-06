@@ -1,32 +1,33 @@
 package com.utkuulasaltin.bluevalleyshop.feature.productdetail
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.utkuulasaltin.bluevalleyshop.R
+import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
+import com.utkuulasaltin.bluevalleyshop.databinding.FragmentProductDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProductDetailFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = ProductDetailFragment()
-    }
-
-    private lateinit var viewModel: ProductDetailViewModel
+    private val viewModel by viewModels<ProductDetailViewModel>()
+    private lateinit var binding: FragmentProductDetailBinding
+    private var navController: NavController? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_product_detail, container, false)
+        binding = FragmentProductDetailBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProductDetailViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController = findNavController()
     }
 
 }

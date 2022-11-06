@@ -1,5 +1,6 @@
 package com.utkuulasaltin.bluevalleyshop.feature.onboarding.adapter
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
@@ -11,6 +12,7 @@ class OnBoardingAdapter(
     private val layouts: List<Int>
 ) :
     FragmentStateAdapter(fragmentActivity) {
+
     override fun getItemCount(): Int {
         return layouts.size
     }
@@ -18,4 +20,5 @@ class OnBoardingAdapter(
     override fun createFragment(position: Int): Fragment {
         return OnBoardingFragment.newInstance(layouts[position])
     }
+
 }

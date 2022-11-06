@@ -2,11 +2,8 @@ package com.utkuulasaltin.bluevalleyshop.feature.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
+import com.utkuulasaltin.bluevalleyshop.data.local.DataStoreManager
 import com.utkuulasaltin.bluevalleyshop.data.model.ProductDTO
-import com.utkuulasaltin.bluevalleyshop.data.model.ProductResponse
-import com.utkuulasaltin.bluevalleyshop.data.model.ProductResponseItem
 import com.utkuulasaltin.bluevalleyshop.data.remote.utils.DataState
 import com.utkuulasaltin.bluevalleyshop.domain.repository.ProductsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val productsRepository: ProductsRepository
+    private val productsRepository: ProductsRepository,
+    private val dataStoreManager: DataStoreManager
 ) :
     ViewModel() {
     private val _uiState = MutableStateFlow<HomeViewState>(HomeViewState.Success(mutableListOf()))
@@ -56,16 +54,9 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
-
-    fun onProductDetail(id: Int?) {
-        viewModelScope.launch {
-            launch {
-
-            }
-        }
-    }
-
 }
+
+
 
 sealed class HomeViewEvent {
     data class ShowError(val message: String?) : HomeViewEvent()

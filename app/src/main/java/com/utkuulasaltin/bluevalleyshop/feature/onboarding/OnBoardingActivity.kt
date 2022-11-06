@@ -18,17 +18,18 @@ import dagger.hilt.android.AndroidEntryPoint
 class OnBoardingActivity : AppCompatActivity() {
     private val viewModel by viewModels<OnBoardingViewModel>()
     private lateinit var binding: ActivityOnboardingBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.isLastPage = false
-        binding.viewPager.adapter = OnBoardingAdapter(this, prepareOnBoardingItems())
 
+        binding.viewPager.adapter = OnBoardingAdapter(this, prepareOnBoardingItems())
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
         }.attach()
 
         initViews()
+
     }
 
     private fun initViews() {
@@ -36,7 +37,6 @@ class OnBoardingActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 binding.isLastPage = position == 2
-
                 if (position != 0) {
                     binding.btnPrev.visible()
                 } else {
@@ -49,7 +49,6 @@ class OnBoardingActivity : AppCompatActivity() {
             if (binding.viewPager.currentItem == 2) {
                 skipOnBoarding()
             } else {
-                // next onboarding page
                 binding.viewPager.setCurrentItem(binding.viewPager.currentItem.plus(1), true)
             }
         }
@@ -74,6 +73,7 @@ class OnBoardingActivity : AppCompatActivity() {
 
     private fun navigateToMain() {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra(MainActivity.KEY_NAVIGATE_HOME, false)
         startActivity(intent)
         finish()
     }

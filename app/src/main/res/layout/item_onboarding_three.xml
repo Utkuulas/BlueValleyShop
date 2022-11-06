@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_width="match_parent"
                                                    android:layout_height="match_parent">
 
     <ImageView
@@ -15,24 +15,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
     <TextView
-            android:text="Title"
-            android:layout_width="wrap_content"
+            android:text="Secure Shopping"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_title_onboarding_three"
+            android:gravity="center"
             android:textStyle="bold"
             android:textColor="#000000"
             android:textSize="34sp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginHorizontal="24dp"
             app:layout_constraintTop_toBottomOf="@+id/iv_onboarding_three"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-            android:text="Description"
-            android:layout_width="wrap_content"
+            android:text="The number one priority of Blue Valley Shop is that users can shop easily and securely"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_description_onboarding"
+            android:gravity="center"
             android:textColor="#000000"
             android:textSize="24sp"
             android:layout_marginTop="10dp"

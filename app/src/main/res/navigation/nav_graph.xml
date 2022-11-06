@@ -15,6 +15,7 @@
                 app:destination="@id/login_graph"/>
         <action android:id="@+id/action_homeFragment_to_productDetailFragment"
                 app:destination="@id/productDetailFragment"/>
+        <argument android:name="selectedProductId" app:argType="integer"/>
     </fragment>
 
     <fragment
@@ -26,6 +27,7 @@
     <include app:graph="@navigation/login_graph"/>
     <fragment android:id="@+id/productDetailFragment"
               android:name="com.utkuulasaltin.bluevalleyshop.feature.productdetail.ProductDetailFragment"
-              android:label="ProductDetailFragment"/>
+              android:label="ProductDetailFragment"
+              tools:layout="@layout/fragment_product_detail"/>
 
 </navigation>
