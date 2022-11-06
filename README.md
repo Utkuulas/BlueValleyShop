@@ -13,6 +13,10 @@
 - *Data Store Manager*
 - *Navigation Component*
 
+## Demo
+
+<img height="500" src="Screens/demo.gif" alt="demo" />
+
 ## Screens
 
 <div>
@@ -22,7 +26,3 @@
 <img style="margin-left:20px" height="300" src="Screens/auth_screen_2.jpg" alt="register" title="register" />
 <img style="margin-left:20px" height="300" src="Screens/home_screen.jpg" alt="home" title="home" />
 </div>
-
-## Demo
-
-<img height="500" src="Screens/demo.gif" alt="demo" />
