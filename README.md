@@ -1,6 +1,6 @@
 # Blue Valley Shop
 
-*This app was developed by me as a graduation project for the Pazarama Kotlin Bootcamp.*
+*This app was developed by myself as a graduation project for the Pazarama Kotlin Bootcamp.*
 
 ## Used Technologies
 
